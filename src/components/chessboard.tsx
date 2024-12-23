@@ -20,6 +20,7 @@ const Chessboard: FC = () => {
     for (let j = 0; j < squareSizes; j++) {
       rows[i].push(
         <Board
+          key={`box-coordinates-${notationFile[fileCount]}-${notationRanks[rankCount]}`}
           show_notation_file={fileCount == squareSizes - 1}
           show_notation_rank={rankCount == 0}
           alt={colorAlt}
@@ -38,8 +39,10 @@ const Chessboard: FC = () => {
   return (
     <>
       <div className="chessboard">
-        {rows.map((item) => (
-          <div className="rows">{item}</div>
+        {rows.map((item, index) => (
+          <div key={index} className="rows">
+            {item}
+          </div>
         ))}
       </div>
     </>
