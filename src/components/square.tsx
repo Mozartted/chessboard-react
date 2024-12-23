@@ -8,7 +8,7 @@ type BoardPropType = {
   rank: string;
 };
 
-const Board: FC<BoardPropType> = ({
+const Square: FC<BoardPropType> = ({
   alt,
   file,
   rank,
@@ -25,4 +25,4 @@ const Board: FC<BoardPropType> = ({
   );
 };
 
-export default Board;
+export default Square;

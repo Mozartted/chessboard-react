@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import Board from "./board";
+import Square from "./square";
 
 const Chessboard: FC = () => {
   const squareSizes = 8;
@@ -7,7 +7,7 @@ const Chessboard: FC = () => {
   const notationFile = [1, 2, 3, 4, 5, 6, 7, 8].reverse();
   const notationRanks = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-  // Board structure logic
+  // Square structure logic
   const rows: Array<ReactNode[]> = [];
   let colorAlt = true;
   let startColor = true;
@@ -19,7 +19,7 @@ const Chessboard: FC = () => {
     rows.push([]);
     for (let j = 0; j < squareSizes; j++) {
       rows[i].push(
-        <Board
+        <Square
           key={`box-coordinates-${notationFile[fileCount]}-${notationRanks[rankCount]}`}
           show_notation_file={fileCount == squareSizes - 1}
           show_notation_rank={rankCount == 0}
