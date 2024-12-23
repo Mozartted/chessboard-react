@@ -67,22 +67,50 @@ button:focus-visible {
   }
 }
 
+.chessboard {
+  display: flex;
+  flex-direction: column;
+  width: 90vmin;
+  height: 90vmin;
+  margin: auto;
+}
+
 .rows {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+  /* flex-direction: column; */
 }
 
 .board {
+  display: block;
+  position: relative;
+  /* flex: 1; */
   /* display: block; */
-  width: 60px;
-  height: 60px;
+  /* max-width: 100px; */
+  /* height: 60px; */
   aspect-ratio: 1/1;
 }
 
+.file_num {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.rank_num {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
 .square-green {
+  color: white;
+  font-weight: 700;
   background: green;
 }
 
 .square-yellow {
-  background: yellow;
+  color: green;
+  font-weight: 700;
+  background: #fff67a;
 }
