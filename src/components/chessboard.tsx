@@ -1,13 +1,48 @@
 import { FC, ReactNode } from "react";
 import Square from "./square";
+import { Piece } from "../types";
+import { isUpperCased } from "../utils";
 
-const Chessboard: FC = () => {
+type Position = {
+  color: "white" | "black";
+  piece: Piece;
+};
+type ChessboardPropType = {
+  fen?: string;
+};
+
+const Chessboard: FC = ({ fen }: ChessboardPropType) => {
+  const loadedFen = fen?.split(" ") as Array<string>;
   const squareSizes = 8;
+
+  const ranks = loadedFen[0].split("/");
+  const boardStructure = [];
+  for (const rank of ranks) {
+    const pieces: Position[] = [];
+    const rankPieces = rank.split("");
+    for (const p of rankPieces) {
+      if (!isNaN(parseInt(p))) {
+        // it's a number
+        const i = 0;
+        while (i < parseInt(p)) {
+          pieces.push({ color: "white", piece: null });
+        }
+      } else {
+        const casedState = isUpperCased(p);
+        if (casedState) {
+        } else {
+        }
+      }
+    }
+    // for(let piece of rank.split())
+    boardStructure.push();
+  }
 
   const notationFile = [1, 2, 3, 4, 5, 6, 7, 8].reverse();
   const notationRanks = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
   // Square structure logic
+
   const rows: Array<ReactNode[]> = [];
   let colorAlt = true;
   let startColor = true;

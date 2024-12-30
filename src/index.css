@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
 }
 
 a {
@@ -23,11 +25,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  /* margin: 0 auto; */
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* place-items: center; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
 }
 
 h1 {
@@ -70,15 +72,14 @@ button:focus-visible {
 .chessboard {
   display: flex;
   flex-direction: column;
-  width: 90vmin;
-  height: 90vmin;
-  margin: auto;
+  width: 80vmin;
+  height: 80vmin;
+  margin: 100px auto;
 }
 
 .rows {
   display: flex;
   flex: 1;
-  /* flex-direction: column; */
 }
 
 .board {
