@@ -92,6 +92,10 @@ button:focus-visible {
   aspect-ratio: 1/1;
 }
 
+.board > img {
+  width: 95%;
+}
+
 .file_num {
   position: absolute;
   top: 2px;
